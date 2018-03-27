@@ -1,6 +1,4 @@
-#cp-lessons
-<!--
-
+﻿#cp-lessons
 app     前端目录
     -view
         -.ejs 当做html使用
@@ -49,4 +47,3 @@ npm install babel-plugin-transform-decorators-legacy --save-dev
 //安装jquery
 npm install jquery --save-dev
 
--->
