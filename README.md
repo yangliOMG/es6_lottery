@@ -1,6 +1,7 @@
 ﻿#cp-lessons
  
- <h1>目录结构</h1>
+#目录结构
+ 
 >*app     前端目录
 
 >>-view  
@@ -21,7 +22,7 @@
 express    脚手架工具      在/server中生成服务器代码
 
 
-操作：
+#操作：
 
 npm install gulp -g     //安装gulp  -g全局
 
@@ -47,9 +48,11 @@ gulp-rename  gulp-uglify gulp-util yargs gulp-live-server del gulp-util babel-lo
 babel-preset-env require-dir babel-preset-es2015 --save-dev
 //引入包，可以再package.json中看见dependency
 
-gulp --watch    //  启动项目  默认端口：http://localhost:3000/
+_gulp --watch_    //  启动项目  默认端口：http://localhost:3000/
 
-npm install babel-polyfill --save-dev   //es7方法，处理兼容
+//安装es7方法，处理兼容
+
+npm install babel-polyfill --save-dev   
 
 
 //安装decirators修饰器
