@@ -2,11 +2,17 @@
  
  
 >app     前端目录
+
 >>-view  
+
 >>> -.ejs 当做html使用        
+
 >server  服务器目录
+
 >tasks   构建工具（构建任务脚本）目录
+
 >>-util
+
 >>>-args.js   处理命令行参数
         
 
