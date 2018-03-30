@@ -1,19 +1,19 @@
 ﻿#cp-lessons
  
  <h1>目录结构</h1>
-*app     前端目录
+>*app     前端目录
 
->-view  
+>>-view  
 
->> -.ejs 当做html使用        
+>>> -.ejs 当做html使用        
 
-*server  服务器目录
+>*server  服务器目录
 
-*tasks   构建工具（构建任务脚本）目录
+>*tasks   构建工具（构建任务脚本）目录
 
->-util
+>>-util
 
->>-args.js   处理命令行参数
+>>>-args.js   处理命令行参数
         
 
 
