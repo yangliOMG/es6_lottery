@@ -98,32 +98,16 @@ class Base{
 	      $('.boll-list .btn-boll').addClass('btn-boll-active');
 	    }
 	    if(index===1){
-	      $('.boll-list .btn-boll').each(function(i,t){
-	        if(t.textContent-5>0){
-	          $(t).addClass('btn-boll-active')
-	        }
-	      })
+	      $('.boll-list .btn-boll:gt(4)').addClass('btn-boll-active')
 	    }
 	    if(index===2){
-	      $('.boll-list .btn-boll').each(function(i,t){
-	        if(t.textContent-6<0){
-	          $(t).addClass('btn-boll-active')
-	        }
-	      })
+	      $('.boll-list .btn-boll:lt(5)').addClass('btn-boll-active')
 	    }
 	    if(index===3){
-	      $('.boll-list .btn-boll').each(function(i,t){
-	        if(t.textContent%2==1){
-	          $(t).addClass('btn-boll-active')
-	        }
-	      })
+	      $('.boll-list .btn-boll:even').addClass('btn-boll-active')
 	    }
 	    if(index===4){
-	      $('.boll-list .btn-boll').each(function(i,t){
-	        if(t.textContent%2==0){
-	          $(t).addClass('btn-boll-active')
-	        }
-	      })
+	      $('.boll-list .btn-boll:odd').addClass('btn-boll-active')
 	    }
 	    self.getCount();
 	}

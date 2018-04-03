@@ -5,7 +5,7 @@ class Calculate{
 		const exist = this.play_list.has(play_name);
 		const arr = new Array(active).fill('0');
 		if(exist && play_name.at(0) === 'r'){
-			count = Calculate.combine(arr,play_name.split('')[1]).length;
+			count = Calculate.combine2(arr,play_name.split('')[1]).length;
 		}
 		return count;
 	}
@@ -20,11 +20,11 @@ class Calculate{
 			if(min_active>0){
 				if(min_active-play[1]>=0){
 					arr = new Array(min_active).fill(0);
-					min = Calculate.combine(arr,play[1]).length
+					min = Calculate.combine2(arr,play[1]).length
 				}else{
 					if(play[1] - 5 > 0 && active-play[1]>=0){
 						arr = new Array(active-5).fill(0);
-						min = Calculate.combine(arr,play[1]-5).length;
+						min = Calculate.combine2(arr,play[1]-5).length;
 					}else{
 						min = active-play[1]>-1?1:0;
 					}
@@ -37,13 +37,13 @@ class Calculate{
 			if(play[1]-5>0){
 				if(active-play[1]>=0){
 					arr = new Array(active-5).fill(0);
-					max = Calculate.combine(arr,play[1]-5).length;
+					max = Calculate.combine2(arr,play[1]-5).length;
 				}else{
 					max = 0;
 				}
 			}else if(play[1]-5<0){
 				arr = new Array(Math.min(active,5)).fill(0);
-				max = Calculate.combine(arr,play[1]).length;
+				max = Calculate.combine2(arr,play[1]).length;
 			}else{
 				max = 1;
 			}
@@ -75,6 +75,31 @@ class Calculate{
 			}
 		})(arr,size,[])
 		return allResult;
+	}
+
+
+	//排列组合  第二种解法   数学公式
+	static combine2(arr,size){
+		let arrLen = arr.length;
+		let c= Calculate.C(arrLen,Number(size));
+		return new Array(c).fill(0);
+	}
+
+	static C(fenmu,fenzi){
+		return Calculate.A(fenmu,fenzi)/Calculate.A(fenzi,fenzi);
+	}
+
+	static A(fenmu,fenzi){
+		let count = 1;
+		(function n(m,z){
+			if(z===1){
+				return count *= m;
+			}else{
+				count *= m;
+				n(m-1,z-1);
+			}
+		})(fenmu,fenzi)
+		return count;
 	}
 }
 
